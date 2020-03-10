@@ -48,35 +48,35 @@ Had some problems with the datastore indexes, that got solved by running the dat
 A lot of `pip3 install module_is_missing` along the way.
 
 ### Done
-[x] User can sign in with Google account
-[x] lists persists across sign ins
-[x] add item
-[x] delete item
-[x] delete all
-[x] some comments, code clean up
-[x] mini styling
-[x] README 💪
+- [x] User can sign in with Google account
+- [x] lists persists across sign ins
+- [x] add item
+- [x] delete item
+- [x] delete all
+- [x] some comments, code clean up
+- [x] mini styling
+- [x] README 💪
 
 
 
 ### Wishlist
 
 Code:
-[ ] consolidate fetch items
-[ ] input validation solution (so that <> don't mess up the delete call)
-[ ] code currently verifies the token on each page load. [Cache results in an encrypted session store](http://flask.pocoo.org/docs/1.0/quickstart/#sessions).
-[ ] code modularity and structure
-[ ] more readme
+- [ ] consolidate fetch items
+- [ ] input validation solution (so that <> don't mess up the delete call)
+- [ ] code currently verifies the token on each page load. [Cache results in an encrypted session store](http://flask.pocoo.org/docs/1.0/quickstart/#sessions).
+- [ ] code modularity and structure
+- [ ] more readme
 
 Usability:
-[ ] user can add lists without being signed in, but needs to sign in to save.
-[ ] add info to db + page without refreshing the page
-[ ] "Expired token" message sometimes pops up
+- [ ] user can add lists without being signed in, but needs to sign in to save.
+- [ ] add info to db + page without refreshing the page
+- [ ] "Expired token" message sometimes pops up
 
 Features:
-[ ] make shopping lists (i.e. favourite, add usual purchases with one click)
-[ ] quantities
+- [ ] make shopping lists (i.e. favourite, add usual purchases with one click)
+- [ ] quantities
 
 Style:
-[ ] phone view, put user info on bottom
-[ ] make a little pretty
+- [ ] phone view, put user info on bottom
+- [ ] make a little pretty
