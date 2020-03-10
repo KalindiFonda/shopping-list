@@ -86,5 +86,6 @@ def root():
         store_item(claims['email'], datetime.datetime.now(), item_name)
         return redirect(url_for('root'))
 
+# for testing
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8080, debug=True)
