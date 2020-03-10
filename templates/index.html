@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>My shopping list</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+  <!--should probably hide this heeee-->
+  <script>
+    var config = {
+      apiKey: "AIzaSyDmZuU1AQBF32iRKveEsPajIJ3Kgf6TuMc",
+      authDomain: "kalindi-2020.firebaseapp.com",
+      databaseURL: "https://kalindi-2020.firebaseio.com",
+      projectId: "kalindi-2020",
+      storageBucket: "kalindi-2020.appspot.com",
+      messagingSenderId: "266145900265",
+      appId: "1:266145900265:web:8bf3b6b0fbce825b9d7278",
+      measurementId: "G-KDMT0HWM9E"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.4.0/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.4.0/firebase-ui-auth.css" />
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h3>My shoping list!</h3>
+  <!-- Add item form -->
+  <p>Add new item:
+    <form action="/" method="POST">
+      <input id="shop-item" type="text" name="shop-item" autofocus required="required">
+      <input type="submit">
+    </form>
+  </p>
+  <!-- Success/error messages -->
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <p class='flash'>
+        {% for category, message in messages %}
+          <p class="{{ category }}">{{ message }}</p>
+        {% endfor %}
+      </p>
+    {% endif %}
+  {% endwith %}
+  <!-- Items display and single delete button -->
+  {% if items %}
+    <ul>
+      {% for item in items %}
+        <li>{{ item['item_name'] }}
+          <form class="delete" action="{{url_for('delete', item = item.id,
+            name = item.item_name)}}" method='post'>
+            <input type="submit" value="x" onclick=" confirm('Do you want to delete {{item['item_name']}}?')">
+          </form>
+        </li>
+      {% endfor %}
+    </ul>
+    <!-- Whole shopping list delete button -->
+    <form class="delete_list" action="{{url_for('delete_list')}}" method='post'>
+      <input type="submit" value="Delete whole list"
+        onclick="return confirm('Do you want to delete your entire list?')">
+    </form>
+    <ul>
+  {% endif %}
+  <!-- User login, signout, and auth section -->
+  <div id="firebaseui-auth-container"></div>
+  <div id="login-info">
+    {% if user_data %}
+      <img class="avatar" src="{{user_data['picture']}}" >
+      <span>
+        Signed in as {{ user_data['name'] }}
+      <br>
+    {% elif error_message %}
+      Error: {{ error_message }}
+    {% endif %}
+      <button id="sign-out">Sign out</button> if that's not you!
+    </span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+/* CSS for the Shopping list project */
+
+body {
+	width: 400px;
+	margin: 20px auto;
+}
+
+form {
+	display: inline-block;
+}
+
+li {
+	list-style-type:none
+}
+
+/* Flash messages upon action */
+.deleted {
+	color: red;
+}
+
+.success {
+	color: green;
+}
+
+/* loged in user info styles */
+#login-info {
+	display: flex;
+	position: absolute;
+	right: 0;
+	top: 0;
+	margin: 10px;
+	display: none;
+}
+
+.avatar {
+	max-width: 40px;
+	max-height: 40px;
+	margin-right: 10px;
+}
