@@ -5,7 +5,7 @@ I chose to do this project because it feels like the most useful for my developm
 
 
 ## Process
-At first, I mostly followed [this resource on setting up a Flask App app with Google Cloud Appengine](https://cloud.google.com/appengine/docs/standard/python3/building-app/). And then I was tackling task by task.
+At first, I mostly followed [this resource on setting up a Flask App app with Google Cloud Appengine](https://cloud.google.com/appengine/docs/standard/python3/building-app/). After that I looked at my feature to do list and tackled the items one by one (with lots of googling).
 
 ## How to set up
 
@@ -61,16 +61,21 @@ A lot of `pip3 install module_is_missing` along the way.
 ### Wishlist
 
 Code:
-- [ ] Consolidate fetch items.
-- [ ] Input validation solution (so that <> don't mess up the delete call).
+- [x] Consolidate fetch items.
+- [x] Input validation solution (so that <> don't mess up the delete call).
 - [ ] Code currently verifies the token on each page load. [Cache results in an encrypted session store](http://flask.pocoo.org/docs/1.0/quickstart/#sessions).
+- [ ] DB entity change name.
 - [ ] Code modularity and structure.
-- [ ] More readme.
+- [x] Remove list when signed out.
+
 
 Usability:
 - [ ] User can add lists without being signed in, but needs to sign in to save.
 - [ ] Add info to db + page without refreshing the page.
 - [ ] "Expired token" message sometimes pops up.
+- [x] Sign out delete current list.
+- [ ] Add name of deleted item to success message.
+- [ ] Remove "Delete whole list" button, when there is no list elements.
 
 Features:
 - [ ] Make shopping lists (i.e. favourite, add usual purchases with one click)
